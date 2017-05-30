@@ -34,6 +34,8 @@ and we'll be all good!
 Thank you for using AlertFX 👏.
 If you're feeling generous, donations are always appreciated:
 
-```19XiyrvqyYNLehf89ckBjPQYCfW77F9rx7 (Ƀ, BTC)
+```
+19XiyrvqyYNLehf89ckBjPQYCfW77F9rx7 (Ƀ, BTC)
 0xf6f247e4a929890926F88144111f5E27d87bD07a (ETH)
-LQRUJUpSkmi5BfT6nyPVNKKoLWbnpZ64sL (Ł, LTC)```
+LQRUJUpSkmi5BfT6nyPVNKKoLWbnpZ64sL (Ł, LTC)
+```
