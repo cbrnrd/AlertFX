@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /**
- * Created by Carter on 5/27/17.
+ * Display an error message with a stack trace
  */
 public class ErrorBox {
 
@@ -19,6 +19,10 @@ public class ErrorBox {
     Alert alert = new Alert(Alert.AlertType.ERROR);
     public StageStyle style = StageStyle.DECORATED;
 
+    /**
+     *
+     * @param e The throwable error to display. (Shows the stack trace of <code>e</code>)
+     */
     public ErrorBox(Throwable e){
         error = e;
     }

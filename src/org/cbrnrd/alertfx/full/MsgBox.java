@@ -9,7 +9,7 @@ import javafx.stage.StageStyle;
 public class MsgBox {
 
     String msg;
-    Alert.AlertType type;
+    Alert.AlertType type = Alert.AlertType.NONE;
     String header = "Info";
     public StageStyle style = StageStyle.DECORATED;
 
@@ -56,11 +56,12 @@ public class MsgBox {
         dialog.setY(y);
     }
     public void show(){
-        dialog.initStyle(style);
-        dialog = new Alert(Alert.AlertType.INFORMATION);
+
+        dialog = new Alert(type);
         dialog.setTitle("Alert");
         dialog.setContentText(msg);
         dialog.setResizable(false);
+        dialog.initStyle(style);
         dialog.showAndWait();
     }
 

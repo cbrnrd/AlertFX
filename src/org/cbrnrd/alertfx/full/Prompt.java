@@ -7,7 +7,8 @@ import javafx.stage.StageStyle;
 import java.util.Optional;
 
 /**
- * Created by Carter on 5/27/17.
+ * TODO make this be a {@link javafx.scene.control.TextArea} for input.
+ * This is pretty much a QuestionBox right now
  */
 public class Prompt {
 
