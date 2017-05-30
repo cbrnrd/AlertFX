@@ -11,6 +11,10 @@ public class QuestionBox {
 
     String question;
     Alert alert;
+
+    /**
+     * The style of the stage
+     */
     public StageStyle style = StageStyle.DECORATED;
 
     /**

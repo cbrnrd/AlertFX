@@ -11,6 +11,10 @@ public class MsgBox {
     String msg;
     Alert.AlertType type = Alert.AlertType.NONE;
     String header = "Info";
+
+    /**
+     * The style of the stage
+     */
     public StageStyle style = StageStyle.DECORATED;
 
     Alert dialog;
@@ -63,6 +67,15 @@ public class MsgBox {
         dialog.setResizable(false);
         dialog.initStyle(style);
         dialog.showAndWait();
+    }
+
+    public void showNonblock(){
+        dialog = new Alert(type);
+        dialog.setTitle("Alert");
+        dialog.setContentText(msg);
+        dialog.setResizable(false);
+        dialog.initStyle(style);
+        dialog.show();
     }
 
 }

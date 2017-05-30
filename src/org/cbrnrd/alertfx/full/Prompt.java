@@ -15,6 +15,10 @@ public class Prompt {
     String question;
     String header = "Please enter your info:";
     TextInputDialog alert = new TextInputDialog();
+
+    /**
+     * The style of the stage
+     */
     public StageStyle style = StageStyle.DECORATED;
 
     public Prompt(@NotNull String question){

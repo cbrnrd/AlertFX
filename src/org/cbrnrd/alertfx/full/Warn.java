@@ -11,6 +11,10 @@ public class Warn {
     String warning;
     Alert alert;
     String header = "Warning!";
+
+    /**
+     * The style of the stage
+     */
     public StageStyle style = StageStyle.DECORATED;
 
 
@@ -33,6 +37,14 @@ public class Warn {
         alert.setContentText(warning);
         alert.setHeaderText(header);
         alert.showAndWait();
+    }
+
+    public void showNonblock(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.initStyle(style);
+        alert.setContentText(warning);
+        alert.setHeaderText(header);
+        alert.show();
     }
 
 }

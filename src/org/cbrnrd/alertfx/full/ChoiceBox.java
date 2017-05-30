@@ -1,6 +1,5 @@
 package org.cbrnrd.alertfx.full;
 
-import com.sun.javafx.css.Style;
 import javafx.scene.control.ChoiceDialog;
 import javafx.stage.StageStyle;
 
@@ -12,6 +11,9 @@ import java.util.Optional;
 
 public class ChoiceBox {
 
+    /**
+     * The style of the stage
+     */
     public StageStyle style = StageStyle.DECORATED;
 
     private List<String> choices = new ArrayList<>();

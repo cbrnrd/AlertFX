@@ -14,6 +14,9 @@ public class ConfirmExit {
 
     public ConfirmExit(){}
 
+    /**
+     * The style of the stage
+     */
     public StageStyle style = StageStyle.DECORATED;
 
     public boolean show(){
