@@ -1,15 +1,13 @@
-package org.cbrnrd.alertfx.full;
+package org.cbrnrd.alertfx;
 
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-/**
- * Created by Carter on 5/26/17.
- */
+
 public class MsgBox {
 
     String msg;
-    Alert.AlertType type = Alert.AlertType.NONE;
+    Alert.AlertType type = Alert.AlertType.INFORMATION;
     String header = "Info";
 
     /**
@@ -31,7 +29,7 @@ public class MsgBox {
      * Show a message box with context <code>msg</code>
      * and type <code>type</code>
      * @param msg The message to display
-     * @param type The alert type of the org.cbrnrd.alertfx.full.MsgBox
+     * @param type The alert type of the MsgBox
      */
     public MsgBox(String msg, Alert.AlertType type){
         this.msg = msg;
@@ -42,7 +40,7 @@ public class MsgBox {
      * Show a message box with context <code>msg</code>
      * and type <code>type</code>
      * @param msg The message to display
-     * @param type The alert type of the org.cbrnrd.alertfx.full.MsgBox
+     * @param type The alert type of the MsgBox
      * @param header The header to display (default: "Info")
      */
     public MsgBox(String msg, Alert.AlertType type, String header){

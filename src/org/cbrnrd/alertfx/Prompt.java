@@ -1,4 +1,4 @@
-package org.cbrnrd.alertfx.full;
+package org.cbrnrd.alertfx;
 
 import com.sun.istack.internal.NotNull;
 import javafx.scene.control.TextInputDialog;

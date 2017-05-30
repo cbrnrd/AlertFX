@@ -1,4 +1,4 @@
-package org.cbrnrd.alertfx.full;
+package org.cbrnrd.alertfx;
 
 import javafx.scene.control.ChoiceDialog;
 import javafx.stage.StageStyle;

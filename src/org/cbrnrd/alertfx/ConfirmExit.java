@@ -1,4 +1,4 @@
-package org.cbrnrd.alertfx.full;
+package org.cbrnrd.alertfx;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -26,11 +26,7 @@ public class ConfirmExit {
         alert.setHeaderText("Exit");
         setGraphicToError(alert);
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.YES){
-            return true;
-        } else {
-            return false;
-        }
+        return result.isPresent() && result.get() == ButtonType.YES;
     }
 
     protected static void setGraphicToError(Alert alert){

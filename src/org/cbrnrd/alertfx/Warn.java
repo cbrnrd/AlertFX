@@ -1,4 +1,4 @@
-package org.cbrnrd.alertfx.full;
+package org.cbrnrd.alertfx;
 
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
