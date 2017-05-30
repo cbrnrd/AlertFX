@@ -1,6 +1,7 @@
 package org.cbrnrd.alertfx;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.stage.StageStyle;
 
 
@@ -57,6 +58,17 @@ public class MsgBox {
         dialog.setX(x);
         dialog.setY(y);
     }
+
+    /**
+     * Applies a custom css file to the alert
+     * @param path The full path of the css file
+     */
+    public void applyCss(String path){
+        DialogPane dialogPane = dialog.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
+        dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
+    }
+
     public void show(){
 
         dialog = new Alert(type);

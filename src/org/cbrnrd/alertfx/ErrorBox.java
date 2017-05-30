@@ -1,6 +1,7 @@
 package org.cbrnrd.alertfx;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
@@ -24,11 +25,21 @@ public class ErrorBox {
     public StageStyle style = StageStyle.DECORATED;
 
     /**
-     *
+     * Displays an error box with an optional expandable stack trace.
      * @param e The throwable error to display. (Shows the stack trace of <code>e</code>)
      */
     public ErrorBox(Throwable e){
         error = e;
+    }
+
+    /**
+     * Applies a custom css file to the alert
+     * @param path The full path of the css file
+     */
+    public void applyCss(String path){
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
+        dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
     public void show(){

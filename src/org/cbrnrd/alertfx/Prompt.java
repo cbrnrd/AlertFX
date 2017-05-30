@@ -1,6 +1,7 @@
 package org.cbrnrd.alertfx;
 
 import com.sun.istack.internal.NotNull;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.StageStyle;
 
@@ -28,6 +29,16 @@ public class Prompt {
     public Prompt(@NotNull String question, String header){
         this.question = question;
         this.header = header;
+    }
+
+    /**
+     * Applies a custom css file to the alert
+     * @param path The full path of the css file
+     */
+    public void applyCss(String path){
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
+        dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
     public void setHeader(String head){

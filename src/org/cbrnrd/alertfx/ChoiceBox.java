@@ -1,6 +1,7 @@
 package org.cbrnrd.alertfx;
 
 import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.DialogPane;
 import javafx.stage.StageStyle;
 
 import java.util.ArrayList;
@@ -18,6 +19,17 @@ public class ChoiceBox {
 
     private List<String> choices = new ArrayList<>();
     private ChoiceDialog<String> alert;
+
+    /**
+     * Applies a custom css file to the alert
+     * @param path The full path of the css file
+     */
+    public void applyCss(String path){
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
+        dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
+    }
+
 
     public ChoiceBox(String... choices){
         Collections.addAll(this.choices, choices);
