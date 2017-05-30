@@ -2,6 +2,7 @@ package org.cbrnrd.alertfx.full;
 
 import com.sun.istack.internal.NotNull;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
@@ -13,12 +14,13 @@ public class Prompt {
     String question;
     String header = "Please enter your info:";
     TextInputDialog alert = new TextInputDialog();
+    public StageStyle style = StageStyle.DECORATED;
 
     public Prompt(@NotNull String question){
         this.question = question;
     }
 
-    public Prompt(String question, String header){
+    public Prompt(@NotNull String question, String header){
         this.question = question;
         this.header = header;
     }
@@ -39,7 +41,7 @@ public class Prompt {
 
 
     public String show(){
-
+        alert.initStyle(style);
         alert.setHeaderText(header);
         alert.setContentText(question);
         Optional<String> result = alert.showAndWait();

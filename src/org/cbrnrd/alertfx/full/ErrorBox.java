@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.stage.StageStyle;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -16,12 +17,14 @@ public class ErrorBox {
 
     Throwable error;
     Alert alert = new Alert(Alert.AlertType.ERROR);
+    public StageStyle style = StageStyle.DECORATED;
 
     public ErrorBox(Throwable e){
         error = e;
     }
 
     public void show(){
+        alert.initStyle(style);
         alert.setTitle("Exception Caught!");
         alert.setHeaderText("Exception encountered");
         alert.setContentText(error.getMessage());

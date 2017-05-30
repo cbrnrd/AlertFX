@@ -3,6 +3,7 @@ package org.cbrnrd.alertfx.full;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
@@ -13,8 +14,12 @@ public class ConfirmExit {
 
     public ConfirmExit(){}
 
+    public StageStyle style = StageStyle.DECORATED;
+
     public boolean show(){
+
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit?", ButtonType.YES, ButtonType.NO);
+        alert.initStyle(style);
         alert.setHeaderText("Exit");
         setGraphicToError(alert);
         Optional<ButtonType> result = alert.showAndWait();

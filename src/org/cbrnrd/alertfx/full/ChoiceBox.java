@@ -1,6 +1,8 @@
 package org.cbrnrd.alertfx.full;
 
+import com.sun.javafx.css.Style;
 import javafx.scene.control.ChoiceDialog;
+import javafx.stage.StageStyle;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +11,8 @@ import java.util.Optional;
 
 
 public class ChoiceBox {
+
+    public StageStyle style = StageStyle.DECORATED;
 
     private List<String> choices = new ArrayList<>();
     private ChoiceDialog<String> alert;
@@ -29,9 +33,11 @@ public class ChoiceBox {
 
     public String show(){
         alert = new ChoiceDialog<>(null, choices);
+        alert.initStyle(style);
         Optional<String> result = alert.showAndWait();
         return result.orElse(null);  // God bless intellij help
-
     }
+
+
 
 }

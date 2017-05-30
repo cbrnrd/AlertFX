@@ -1,6 +1,7 @@
 package org.cbrnrd.alertfx.full;
 
 import javafx.scene.control.Alert;
+import javafx.stage.StageStyle;
 
 /**
  * TODO javadoc
@@ -10,6 +11,8 @@ public class Warn {
     String warning;
     Alert alert;
     String header = "Warning!";
+    public StageStyle style = StageStyle.DECORATED;
+
 
     public Warn(String warning){
         this.warning = warning;
@@ -26,6 +29,7 @@ public class Warn {
 
     public void show(){
         Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.initStyle(style);
         alert.setContentText(warning);
         alert.setHeaderText(header);
         alert.showAndWait();

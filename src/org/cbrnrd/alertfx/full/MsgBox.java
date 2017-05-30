@@ -1,6 +1,7 @@
 package org.cbrnrd.alertfx.full;
 
 import javafx.scene.control.Alert;
+import javafx.stage.StageStyle;
 
 /**
  * Created by Carter on 5/26/17.
@@ -10,6 +11,7 @@ public class MsgBox {
     String msg;
     Alert.AlertType type;
     String header = "Info";
+    public StageStyle style = StageStyle.DECORATED;
 
     Alert dialog;
 
@@ -54,6 +56,7 @@ public class MsgBox {
         dialog.setY(y);
     }
     public void show(){
+        dialog.initStyle(style);
         dialog = new Alert(Alert.AlertType.INFORMATION);
         dialog.setTitle("Alert");
         dialog.setContentText(msg);

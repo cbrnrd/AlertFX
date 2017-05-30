@@ -2,6 +2,7 @@ package org.cbrnrd.alertfx.full;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
@@ -9,8 +10,8 @@ import java.util.Optional;
 public class QuestionBox {
 
     String question;
-    String header = "?";
     Alert alert;
+    public StageStyle style = StageStyle.DECORATED;
 
     /**
      * Display a confirmation dialog to the end user
@@ -33,6 +34,7 @@ public class QuestionBox {
 
     public boolean show(){
         alert = new Alert(Alert.AlertType.CONFIRMATION, question, ButtonType.YES, ButtonType.NO);
+        alert.initStyle(style);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent()) if (result.get() == ButtonType.YES) return true;
         return false;
