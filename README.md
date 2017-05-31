@@ -24,6 +24,17 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
 `compile 'org.cbrnrd:alertfx:1.0-b'`
 
+or 
+
+(maybe)
+```
+repositories {
+    maven {
+        url  "http://dl.bintray.com/cbrnrd/AlertFX" 
+    }
+}
+```
+
 #### Ivy
 
 ```
