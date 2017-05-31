@@ -41,7 +41,7 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
 ## Documentation
 
-Available [here](cbrnrd.github.io/AlertFX). (Still working on it)
+Available [here](http://cbrnrd.github.io/AlertFX). (Still working on it)
 
 ## Bugs
 
