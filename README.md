@@ -9,7 +9,7 @@ A JavaFX library to make working with Dialogs simpler.
 ### Precompiled (recommended for now)
 Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
-### Maven
+#### Maven
 
 ```
 <dependency>
@@ -20,11 +20,11 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 </dependency>
 ```
 
-### Gradle
+#### Gradle
 
 `compile 'org.cbrnrd:alertfx:1.0-b'`
 
-### Ivy
+#### Ivy
 
 ```
 <dependency org='org.cbrnrd' name='alertfx' rev='1.0-b'>
