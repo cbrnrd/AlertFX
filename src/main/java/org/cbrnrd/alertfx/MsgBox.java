@@ -10,16 +10,16 @@ import javafx.stage.StageStyle;
  */
 public class MsgBox {
 
-    String msg;
-    Alert.AlertType type = Alert.AlertType.INFORMATION;
-    String header = "Info";
+    private String msg;
+    private Alert.AlertType type = Alert.AlertType.INFORMATION;
+    private String header = "Info";
 
     /**
      * The style of the stage
      */
     public StageStyle style = StageStyle.DECORATED;
 
-    Alert dialog;
+    private Alert dialog;
 
     /**
      * Show a message box with context <code>msg</code>

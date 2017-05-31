@@ -6,15 +6,15 @@
 
     <groupId>org.cbrnrd</groupId>
     <artifactId>alertfx</artifactId>
-    <version>1.0-b</version>
+    <version>1.0-c</version>
     <name>org.cbrnrd:alertfx</name>
     <description>A JavaFX library to make working with Dialogs simpler</description>
     <licenses>
         <license>
-            <name>MIT 3-Clause</name>
+            <name>BSD 3-Clause</name>
         </license>
     </licenses>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -25,8 +25,18 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+      			<groupId>org.apache.maven.plugins</groupId>
+      			<artifactId>maven-javadoc-plugin</artifactId>
+      			<executions>
+      				<execution>
+      					<id>attach-javadocs</id>
+      					<goals>
+      						<goal>jar</goal>
+      					</goals>
+      				</execution>
+      			</executions>
+      		</plugin>
         </plugins>
     </build>
-
-
 </project>
