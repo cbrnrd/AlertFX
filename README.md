@@ -22,7 +22,7 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
 ### Gradle
 
-```compile 'org.cbrnrd:alertfx:1.0-b'```
+`compile 'org.cbrnrd:alertfx:1.0-b'`
 
 ### Ivy
 
@@ -41,7 +41,7 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
 ## Documentation
 
-Coming _very_ soon. It will be available [here](cbrnrd.github.io/AlertFX).
+Available [here](cbrnrd.github.io/AlertFX). (Still working on it)
 
 ## Bugs
 
