@@ -1,6 +1,7 @@
 # AlertFX
 
 [ ![Download](https://api.bintray.com/packages/cbrnrd/AlertFX/AlertFX/images/download.svg) ](https://bintray.com/cbrnrd/AlertFX/AlertFX/_latestVersion)
+[![Code Climate](https://codeclimate.com/github/cbrnrd/AlertFX/badges/gpa.svg)](https://codeclimate.com/github/cbrnrd/AlertFX)
 
 A JavaFX library to make working with Dialogs simpler.
 
