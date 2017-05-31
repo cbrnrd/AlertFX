@@ -16,8 +16,8 @@ import java.io.StringWriter;
  */
 public class ErrorBox {
 
-    Throwable error;
-    Alert alert = new Alert(Alert.AlertType.ERROR);
+    private Throwable error;
+    private Alert alert = new Alert(Alert.AlertType.ERROR);
 
     /**
      * The style of the stage
@@ -42,6 +42,9 @@ public class ErrorBox {
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
+    /**
+     * Shows the alert
+     */
     public void show(){
         alert.initStyle(style);
         alert.setTitle("Exception Caught!");
@@ -75,6 +78,9 @@ public class ErrorBox {
 
     }
 
+    /**
+     * Shows the alert, but it isn't always on top
+     */
     public void showNonblock(){
         alert.initStyle(style);
         alert.setTitle("Exception Caught!");

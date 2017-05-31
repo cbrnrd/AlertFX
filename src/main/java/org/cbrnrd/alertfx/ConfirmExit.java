@@ -9,10 +9,13 @@ import javafx.stage.StageStyle;
 import java.util.Optional;
 
 /**
- * Created by Carter on 5/27/17.
+ * Custom alert to confirm the exiting of a program
  */
 public class ConfirmExit {
 
+    /**
+     * Default blank constructor
+     */
     public ConfirmExit(){}
 
     /**
@@ -20,7 +23,7 @@ public class ConfirmExit {
      */
     public StageStyle style = StageStyle.DECORATED;
 
-    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit?", ButtonType.YES, ButtonType.NO);
+    private Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit?", ButtonType.YES, ButtonType.NO);
 
     /**
      * Applies a custom css file to the alert
@@ -32,6 +35,10 @@ public class ConfirmExit {
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
+    /**
+     * Shows the alert
+     * @return true if the user clicks "Yes", false if otherwise
+     */
     public boolean show(){
 
         alert.initStyle(style);
@@ -41,7 +48,7 @@ public class ConfirmExit {
         return result.isPresent() && result.get() == ButtonType.YES;
     }
 
-    protected static void setGraphicToError(Alert alert){
+    private static void setGraphicToError(Alert alert){
         Label label = new Label();
         label.getStyleClass().addAll("alert", "error", "dialog-pane");
         alert.setGraphic(label);

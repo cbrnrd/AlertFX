@@ -10,8 +10,8 @@ import java.util.Optional;
 
 public class QuestionBox {
 
-    String question;
-    Alert alert;
+    private String question;
+    private Alert alert;
 
     /**
      * The style of the stage
@@ -21,17 +21,25 @@ public class QuestionBox {
     /**
      * Display a confirmation dialog to the end user
      * @param question The information to give to the end user
-     * @return boolean <code>True</code> if the "YES" button is pressed,
      * <code>false</code> if the "Cancel button is pressed
      */
     public QuestionBox(String question){
         this.question = question;
     }
 
+    /**
+     * Sets the header of the alert
+     * @param head The header to display
+     */
     public void setHeader(String head){
         alert.setHeaderText(head);
     }
 
+    /**
+     * Sets the size of the alert
+     * @param x The size on the x-axis
+     * @param y The size on the y-axis
+     */
     public void setSize(double x, double y){
         alert.setX(x);
         alert.setY(y);
@@ -47,6 +55,10 @@ public class QuestionBox {
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
+    /**
+     * Shows the alert
+     * @return <code>true</code> if "Yes" was pressed, else return false
+     */
     public boolean show(){
         alert = new Alert(Alert.AlertType.CONFIRMATION, question, ButtonType.YES, ButtonType.NO);
         alert.initStyle(style);

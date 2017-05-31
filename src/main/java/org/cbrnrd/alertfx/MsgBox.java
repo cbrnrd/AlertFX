@@ -5,6 +5,9 @@ import javafx.scene.control.DialogPane;
 import javafx.stage.StageStyle;
 
 
+/**
+ * Shows a general, customizable message box
+ */
 public class MsgBox {
 
     String msg;
@@ -50,10 +53,19 @@ public class MsgBox {
         this.header = header;
     }
 
+    /**
+     * Sets the header of the alert
+     * @param head The header to show
+     */
     public void setHeader(String head){
         dialog.setHeaderText(head);
     }
 
+    /**
+     * Sets the size of the alert
+     * @param x The size on the x-axis
+     * @param y The size on the y-axis
+     */
     public void setSize(double x, double y){
         dialog.setX(x);
         dialog.setY(y);
@@ -69,6 +81,9 @@ public class MsgBox {
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
+    /**
+     * Shows the alert
+     */
     public void show(){
 
         dialog = new Alert(type);
@@ -79,6 +94,9 @@ public class MsgBox {
         dialog.showAndWait();
     }
 
+    /**
+     * Shows the alert, but it isn't always on top
+     */
     public void showNonblock(){
         dialog = new Alert(type);
         dialog.setTitle("Alert");

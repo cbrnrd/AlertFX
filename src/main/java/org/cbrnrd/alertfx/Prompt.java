@@ -7,8 +7,7 @@ import javafx.stage.StageStyle;
 import java.util.Optional;
 
 /**
- * TODO make this be a {@link javafx.scene.control.TextArea} for input.
- * This is pretty much a QuestionBox right now
+ * Gets the users input from a TextField
  */
 public class Prompt {
 
@@ -40,21 +39,37 @@ public class Prompt {
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
     }
 
+    /**
+     * Set the header of the alert
+     * @param head The header to be shown
+     */
     public void setHeader(String head){
         alert.setHeaderText(head);
     }
 
+    /**
+     * Sets the size of the alert
+     * @param x The size on the x-axis
+     * @param y The size on the y-axis
+     */
     public void setSize(double x, double y){
         alert.setX(x);
         alert.setY(y);
     }
 
+    /**
+     * Sets the name of the alert window
+     * @param s Name of the window
+     */
     public void setWindowName(String s){
         alert.setTitle(s);
     }
 
 
-
+    /**
+     * Shows the alert
+     * @return String - Whatever the user entered. Null if nothing was entered
+     */
     public String show(){
         alert.initStyle(style);
         alert.setHeaderText(header);
@@ -62,9 +77,7 @@ public class Prompt {
         Optional<String> result = alert.showAndWait();
         if (result.isPresent()){
             return result.toString();
-        } else {
-            return "";  // TODO this should probably be changed
-        }
+        } else return null;
 
     }
 
