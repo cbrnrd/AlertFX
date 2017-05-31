@@ -1,5 +1,7 @@
 # AlertFX
 
+[ ![Download](https://api.bintray.com/packages/cbrnrd/AlertFX/AlertFX/images/download.svg) ](https://bintray.com/cbrnrd/AlertFX/AlertFX/_latestVersion)
+
 A JavaFX library to make working with Dialogs simpler.
 
 ## Downloading
