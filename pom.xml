@@ -6,7 +6,15 @@
 
     <groupId>org.cbrnrd</groupId>
     <artifactId>alertfx</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-b</version>
+    <name>org.cbrnrd:alertfx</name>
+    <description>A JavaFX library to make working with Dialogs simpler</description>
+    <licenses>
+        <license>
+            <name>MIT 3-Clause</name>
+        </license>
+    </licenses>
+    
     <build>
         <plugins>
             <plugin>

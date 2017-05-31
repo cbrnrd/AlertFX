@@ -1,6 +1,5 @@
 package org.cbrnrd.alertfx;
 
-import com.sun.istack.internal.NotNull;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.StageStyle;
@@ -22,11 +21,11 @@ public class Prompt {
      */
     public StageStyle style = StageStyle.DECORATED;
 
-    public Prompt(@NotNull String question){
+    public Prompt(String question){
         this.question = question;
     }
 
-    public Prompt(@NotNull String question, String header){
+    public Prompt(String question, String header){
         this.question = question;
         this.header = header;
     }
