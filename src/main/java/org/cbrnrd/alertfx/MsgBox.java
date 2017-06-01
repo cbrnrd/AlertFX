@@ -82,19 +82,6 @@ public class MsgBox {
     }
 
     /**
-     * Shows the alert
-     */
-    public void show(){
-
-        dialog = new Alert(type);
-        dialog.setTitle("Alert");
-        dialog.setContentText(msg);
-        dialog.setResizable(false);
-        dialog.initStyle(style);
-        dialog.showAndWait();
-    }
-
-    /**
      * Shows the alert, but it isn't always on top
      */
     public void showNonblock(){
