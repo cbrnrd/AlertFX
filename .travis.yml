@@ -1,13 +1,12 @@
 language: java
 
+sudo: false
+
 jdk:
   - oraclejdk8
 
-before-install:
+before-script:
   - sudo apt-get update -q
   - sudo apt-get install openjfx -y  # For the JavaFX API
 
-before-script:
-  - echo "Skipping mvn install -B- V"
-
-script: mvn clean install
+script: mvn clean verify
