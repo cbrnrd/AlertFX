@@ -1,3 +1,4 @@
+os: "trusty"
 language: java
 
 sudo: false
