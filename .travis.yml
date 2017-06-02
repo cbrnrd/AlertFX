@@ -17,4 +17,4 @@ before-install:
 script:
   - mvn clean verify
   - mvn clean install
-  - mvn test
+  - mvn test -X
