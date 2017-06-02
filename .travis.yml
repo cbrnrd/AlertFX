@@ -6,4 +6,5 @@ jdk:
 before-install:
   - sudo apt-get update -q
   - sudo apt-get install openjfx -y  # For the JavaFX API
-  
+
+script: mvn clean build
