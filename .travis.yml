@@ -12,6 +12,9 @@ before-install:
   - sudo apt-get update -q
   - sudo apt-get install openjfx -y  # For the JavaFX API
 
-#install: mvn install -V -e
 
-script: mvn clean install
+
+script:
+  - mvn clean verify
+  - mvn clean install
+  - mvn test
