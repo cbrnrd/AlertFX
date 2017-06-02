@@ -1,13 +1,15 @@
-os: "trusty"
 language: java
 
 sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer # http://bit.ly/2qOkihl
 
-jdk:
-  - oraclejdk8
-
-before-script:
+before-install:
   - sudo apt-get update -q
   - sudo apt-get install openjfx -y  # For the JavaFX API
 
-script: mvn clean verify
+install: mvn install -V -e
+
+script: mvn clean install
