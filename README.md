@@ -8,12 +8,12 @@ A JavaFX library to make working with Dialogs simpler.
 
 ## Downloading
 
-### Precompiled (recommended for now)
+### Precompiled
 Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
-For now, the project uses `mavenCentral()` and `jCenter()` is hopefully coming soon (if it's accepted)
+##### AlertFX uses `jCenter()` to distribute the library.
 
-#### Maven
+### Maven
 
 ```
 <dependency>
@@ -24,22 +24,12 @@ For now, the project uses `mavenCentral()` and `jCenter()` is hopefully coming s
 </dependency>
 ```
 
-#### Gradle
+### Gradle
 
 `compile 'org.cbrnrd:alertfx:1.0-c'`
 
-or 
 
-(maybe)
-```
-repositories {
-    maven {
-        url  "http://dl.bintray.com/cbrnrd/AlertFX" 
-    }
-}
-```
-
-#### Ivy
+### Ivy
 
 ```
 <dependency org='org.cbrnrd' name='alertfx' rev='1.0-c'>
