@@ -22,18 +22,20 @@ public class Login {
      */
     public Login(){}
 
+    /*
     /**
      * The login image
-     */
+     /
     public String image = this.getClass().getResource("login_icon.png").toString();
 
     /**
      *
      * @param path
-     */
+     /
     public void setImage(String path){
-        this.image = image;
+        path = this.getClass().getResource(path).toString();
     }
+    */
 
     /**
      * The window title
@@ -82,7 +84,7 @@ public class Login {
         alert = new Dialog<>();
         alert.setTitle(title);
         alert.setHeaderText(header);
-        alert.setGraphic(new ImageView(image));
+        //alert.setGraphic(new ImageView(image));
 
         // Set the buttons
         ButtonType buttonType = new ButtonType("Login", ButtonBar.ButtonData.OK_DONE);
