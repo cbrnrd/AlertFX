@@ -19,20 +19,20 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 <dependency>
   <groupId>org.cbrnrd</groupId>
   <artifactId>alertfx</artifactId>
-  <version>1.0-c</version>
+  <version>1.1</version>
   <type>pom</type>
 </dependency>
 ```
 
 ### Gradle
 
-`compile 'org.cbrnrd:alertfx:1.0-c'`
+`compile 'org.cbrnrd:alertfx:1.1'`
 
 
 ### Ivy
 
 ```
-<dependency org='org.cbrnrd' name='alertfx' rev='1.0-c'>
+<dependency org='org.cbrnrd' name='alertfx' rev='1.1'>
   <artifact name='alertfx' ext='pom' />
 </dependency>
 ```

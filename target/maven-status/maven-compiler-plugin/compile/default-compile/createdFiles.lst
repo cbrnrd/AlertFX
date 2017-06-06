@@ -5,3 +5,4 @@ org/cbrnrd/alertfx/QuestionBox.class
 org/cbrnrd/alertfx/ChoiceBox.class
 org/cbrnrd/alertfx/Warn.class
 org/cbrnrd/alertfx/Prompt.class
+org/cbrnrd/alertfx/Login.class
