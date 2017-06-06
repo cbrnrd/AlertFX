@@ -7,7 +7,9 @@ import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
-
+/**
+ * Display a Yes/No question box
+ */
 public class QuestionBox {
 
     private String question;
