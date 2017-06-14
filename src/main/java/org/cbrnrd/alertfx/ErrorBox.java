@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.StageStyle;
+import org.cbrnrd.alertfx.exceptions.AlertNotEditableException;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -18,6 +19,19 @@ public class ErrorBox {
 
     private Throwable error;
     private Alert alert = new Alert(Alert.AlertType.ERROR);
+
+    /**
+     * Sets the size of the alert
+     * @param x The size on the x-axis
+     * @param y The size on the y-axis
+     */
+    public void setSize(double x, double y){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
+        alert.setWidth(x);
+        alert.setHeight(y);
+    }
 
     /**
      * The style of the stage
@@ -37,6 +51,9 @@ public class ErrorBox {
      * @param path The full path of the css file
      */
     public void applyCss(String path){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension

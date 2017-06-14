@@ -3,6 +3,7 @@ package org.cbrnrd.alertfx;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.DialogPane;
 import javafx.stage.StageStyle;
+import org.cbrnrd.alertfx.exceptions.AlertNotEditableException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,6 +28,9 @@ public class ChoiceBox {
      * @param path The full path of the css file
      */
     public void applyCss(String path){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
@@ -50,10 +54,26 @@ public class ChoiceBox {
     }
 
     /**
+     * Sets the size of the alert
+     * @param x The size on the x-axis
+     * @param y The size on the y-axis
+     */
+    public void setSize(double x, double y){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
+        alert.setWidth(x);
+        alert.setHeight(y);
+    }
+
+    /**
      * Sets the header of the alert
      * @param header The header to be shown
      */
     public void setHeader(String header){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         alert.setHeaderText(header);
     }
 
@@ -66,7 +86,7 @@ public class ChoiceBox {
         alert = new ChoiceDialog<>(null, choices);
         alert.initStyle(style);
         Optional<String> result = alert.showAndWait();
-        return result.orElse(null);  // God bless intellij help
+        return result.orElse(null);
     }
 
 

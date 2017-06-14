@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
+import org.cbrnrd.alertfx.exceptions.AlertNotEditableException;
 
 import java.util.Optional;
 
@@ -22,20 +23,6 @@ public class Login {
      */
     public Login(){}
 
-    /*
-    /**
-     * The login image
-     /
-    public String image = this.getClass().getResource("login_icon.png").toString();
-
-    /**
-     *
-     * @param path
-     /
-    public void setImage(String path){
-        path = this.getClass().getResource(path).toString();
-    }
-    */
 
     /**
      * The window title
@@ -71,8 +58,11 @@ public class Login {
      * @param y The size on the y-axis
      */
     public void setSize(double x, double y){
-        alert.setX(x);
-        alert.setY(y);
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
+        alert.setWidth(x);
+        alert.setHeight(y);
     }
 
     /**
@@ -80,11 +70,9 @@ public class Login {
      * @return {@link Optional} - A {@link Pair} that has the structure: <code>username, password</code>
      */
     public Optional<Pair<String, String>> show(){
-
         alert = new Dialog<>();
         alert.setTitle(title);
         alert.setHeaderText(header);
-        //alert.setGraphic(new ImageView(image));
 
         // Set the buttons
         ButtonType buttonType = new ButtonType("Login", ButtonBar.ButtonData.OK_DONE);

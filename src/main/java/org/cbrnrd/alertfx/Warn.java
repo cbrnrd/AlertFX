@@ -3,6 +3,7 @@ package org.cbrnrd.alertfx;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.stage.StageStyle;
+import org.cbrnrd.alertfx.exceptions.AlertNotEditableException;
 
 /**
  * Shows a warning alert
@@ -28,17 +29,23 @@ public class Warn {
     * @param head The header to show
     */
     public void setHeader(String head){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         alert.setHeaderText(head);
     }
 
     /**
-    * Changes the size of the alert
-    * @param x The size on the x-axis
-    * @param y The size on the y-axis
-    */
+     * Sets the size of the alert
+     * @param x The size on the x-axis
+     * @param y The size on the y-axis
+     */
     public void setSize(double x, double y){
-        alert.setX(x);
-        alert.setY(y);
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
+        alert.setWidth(x);
+        alert.setHeight(y);
     }
 
     /**
@@ -46,6 +53,9 @@ public class Warn {
      * @param path The full path of the css file
      */
     public void applyCss(String path){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension

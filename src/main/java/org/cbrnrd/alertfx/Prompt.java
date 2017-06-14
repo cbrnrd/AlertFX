@@ -3,6 +3,7 @@ package org.cbrnrd.alertfx;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.StageStyle;
+import org.cbrnrd.alertfx.exceptions.AlertNotEditableException;
 
 import java.util.Optional;
 
@@ -34,6 +35,9 @@ public class Prompt {
      * @param path The full path of the css file
      */
     public void applyCss(String path){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
@@ -44,6 +48,9 @@ public class Prompt {
      * @param head The header to be shown
      */
     public void setHeader(String head){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         alert.setHeaderText(head);
     }
 
@@ -53,8 +60,11 @@ public class Prompt {
      * @param y The size on the y-axis
      */
     public void setSize(double x, double y){
-        alert.setX(x);
-        alert.setY(y);
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
+        alert.setWidth(x);
+        alert.setHeight(y);
     }
 
     /**
@@ -62,6 +72,9 @@ public class Prompt {
      * @param s Name of the window
      */
     public void setWindowName(String s){
+        if (alert.isShowing()){
+            throw new AlertNotEditableException("Alert not editable while it is showing");
+        }
         alert.setTitle(s);
     }
 

@@ -3,12 +3,13 @@ package org.cbrnrd.alertfx;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.stage.StageStyle;
+import org.cbrnrd.alertfx.exceptions.AlertNotEditableException;
 
 
 /**
  * Shows a general, customizable message box
  */
-public class MsgBox {
+public class MsgBox{
 
     private String msg;
     private Alert.AlertType type = Alert.AlertType.INFORMATION;
@@ -58,6 +59,9 @@ public class MsgBox {
      * @param head The header to show
      */
     public void setHeader(String head){
+        if (dialog.isShowing()) {
+            throw new AlertNotEditableException("Unable to edit alert while it is being shown");
+        }
         dialog.setHeaderText(head);
     }
 
@@ -67,8 +71,11 @@ public class MsgBox {
      * @param y The size on the y-axis
      */
     public void setSize(double x, double y){
-        dialog.setX(x);
-        dialog.setY(y);
+        if (dialog.isShowing()) {
+            throw new AlertNotEditableException("Unable to edit alert while it is being shown");
+        }
+        dialog.setWidth(x);
+        dialog.setHeight(y);
     }
 
     /**
@@ -76,6 +83,9 @@ public class MsgBox {
      * @param path The full path of the css file
      */
     public void applyCss(String path){
+        if (dialog.isShowing()) {
+            throw new AlertNotEditableException("Unable to edit alert while it is being shown");
+        }
         DialogPane dialogPane = dialog.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource(path).toExternalForm());
         dialogPane.getStyleClass().add(path.replace(".css", ""));  // Shouldn't have extension
