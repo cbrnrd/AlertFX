@@ -20,7 +20,6 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
   <groupId>org.cbrnrd</groupId>
   <artifactId>alertfx</artifactId>
   <version>1.1</version>
-  <type>pom</type>
 </dependency>
 ```
 
