@@ -6,7 +6,7 @@
 
     <groupId>org.cbrnrd</groupId>
     <artifactId>alertfx</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <name>org.cbrnrd:alertfx</name>
     <description>A JavaFX library to make working with Dialogs simpler</description>
     <licenses>
