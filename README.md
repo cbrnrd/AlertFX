@@ -15,7 +15,7 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
 ### Maven
 
-```
+```xml
 <dependency>
   <groupId>org.cbrnrd</groupId>
   <artifactId>alertfx</artifactId>
@@ -25,12 +25,14 @@ Grab the `alertfx.jar` file from `./bin` or from GitHub releases
 
 ### Gradle
 
-`compile 'org.cbrnrd:alertfx:1.1'`
+```gradle
+compile 'org.cbrnrd:alertfx:1.1'
+```
 
 
 ### Ivy
 
-```
+```xml
 <dependency org='org.cbrnrd' name='alertfx' rev='1.1'>
   <artifact name='alertfx' ext='pom' />
 </dependency>
